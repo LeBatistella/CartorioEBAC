@@ -111,51 +111,67 @@ int main()
 {
 	int opcao=0; //Definindo váriaveis
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)
-	{
+	printf("### Cartório da EBAC ###\n\n");
+	printf("Login de administrador!\n\nDigite a sua senha: ");
+	scanf("%s",senhadigitada);
 	
-		system("cls");
-	
-		setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
-	
-		printf("### Cartório da EBAC ###\n\n");
-		printf("Escolha a opção desejada no menu:\n\n"); //Inicio do menu
-		printf("\t1 - Adicionar nomes\n");
-		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n");
-		printf("\t4 - Sair do sistema\n\n");
-		printf("Opção: "); //fim do menu
-	
-		scanf("%d", &opcao);//Armazenando escolha
-	
-		system("cls");
+	comparacao = strcmp(senhadigitada, "admin");
 		
-		switch(opcao)
+	if(comparacao == 0)
+	{
+		for(laco=1;laco=1;)
 		{
-			case 1:
-			registro();
-			break;
+		
+			system("cls");
+		
+			setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
+		
+		
+			printf("Escolha a opção desejada no menu:\n\n"); //Inicio do menu
+			printf("\t1 - Adicionar nomes\n");
+			printf("\t2 - Consultar nomes\n");
+			printf("\t3 - Deletar nomes\n");
+			printf("\t4 - Sair do sistema\n\n");
+			printf("Opção: "); //fim do menu
+		
+			scanf("%d", &opcao);//Armazenando escolha
+		
+			system("cls");
 			
-			case 2:
-			consulta();
-			break;
-			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar nosso sistema.");
-			return 0;
-			break;
-			
-			default:
-			printf("Essa opção não está disponóvel!\n");
-			system("pause");
-			break;
+			switch(opcao)
+			{
+				case 1:
+				registro();
+				break;
+				
+				case 2:
+				consulta();
+				break;
+				
+				case 3:
+				deletar();
+				break;
+				
+				case 4:
+				printf("Obrigado por utilizar nosso sistema.");
+				return 0;
+				break;
+				
+				default:
+				printf("Essa opção não está disponóvel!\n");
+				system("pause");
+				break;
+			}
 		}
 	
+	}
+	else
+	printf("Senha incorreta!");
+	
 }
-}
+	
+
 
